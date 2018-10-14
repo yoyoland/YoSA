@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+body {
+    background-image: url("https://vignette.wikia.nocookie.net/telletubbies/images/4/44/Les-mains-dans-les-poches%21.png/revision/latest?cb=20140424002507");
+    background-repeat: no-repeat;
+    
+}
+</style>
+</head>
+<body>
+
+</body>
+</html>
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <p class="a">ใบPreorder</p>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class ="preorder">
+  <mat-grid-list cols="4" rowHeight="4:1">
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile><form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="หมายเลขคำสั่งซื้อ" value="">
+        </mat-form-field>
+      </form></mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list cols="4" rowHeight="5:1">
+      <mat-grid-tile></mat-grid-tile>
+      <mat-grid-tile><mat-form-field>
+          <mat-select [(ngModel)]="selectUser" placeholder="ชื่อลูกค้า">
+            <mat-option *ngFor="let user of users" [value]="user.userId">
+              {{user.userName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field></mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+      <mat-grid-tile></mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="4" rowHeight="5:1">
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile><mat-form-field>
+          <mat-select [(ngModel)]="selectProduct" placeholder="สินค้าที่สั่ง">
+            <mat-option *ngFor="let product of products" [value]="product">
+              {{product.productName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="4" rowHeight="5:1">
+          <mat-grid-tile></mat-grid-tile>
+          <mat-grid-tile><form class="example-form">
+              <mat-form-field class="example-full-width">
+                <input matInput name = "productNum" [(ngModel)]="productNum"type="number" step="1" min="1" placeholder="จำนวนสินค้า" value="productNum" (keyup)="onKey($event)">
+              </mat-form-field>
+            </form>
+          </mat-grid-tile>
+          <mat-grid-tile><p><span>รวมเป็นเงิน:฿{{sumPrice}}</span></p> </mat-grid-tile>
+          <mat-grid-tile></mat-grid-tile>
+        </mat-grid-list>
+
+      
+      
+        <mat-grid-list cols="4" rowHeight="5:1">
+            <mat-grid-tile></mat-grid-tile>
+            <mat-grid-tile><mat-form-field>
+                <mat-select  [(ngModel)]="selectStatus"  placeholder="สถานะ">
+                  <mat-option *ngFor="let status of statuses" [value]="status.statusId">
+                    {{status.statusName}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field></mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+            <mat-grid-tile></mat-grid-tile>
+          </mat-grid-list>
+
+          <mat-grid-list cols="5" rowHeight="5:1">
+              <mat-grid-tile></mat-grid-tile>
+              <mat-grid-tile></mat-grid-tile>
+              <mat-grid-tile><button mat-raised-button (click)="postPreorder()" color="primary">บันทึก</button></mat-grid-tile>
+              <mat-grid-tile></mat-grid-tile>
+            </mat-grid-list>
+</div>
+
+
+                    

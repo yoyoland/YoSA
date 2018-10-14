@@ -1,0 +1,44 @@
+<body>
+<div class="big">
+  <div>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="ชื่อ" value="">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="นามสกุล" value="">
+      </mat-form-field><br>
+      <mat-form-field>
+        <mat-select placeholder="เพศ" [(value)]="selected">
+          <mat-option value="male">ชาย</mat-option>
+          <mat-option value="female">หญิง</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <form class="address">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="ที่อยู่">
+      </mat-form-field>
+    </form>
+    <mat-form-field>
+      <mat-select placeholder="จังหวัด" [(value)]="selected">
+        <mat-option value="male">1....</mat-option>
+        <mat-option value="female">2....</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <form class="email">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="อีเมล">
+      </mat-form-field>
+    </form>
+    <form class="email">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="เบอร์โทรศัพท์">
+      </mat-form-field>
+    </form>
+    <div>
+      <button mat-raised-button color="primary">สมัคร</button>
+    </div>
+  </div>
+</div>
+</body>
